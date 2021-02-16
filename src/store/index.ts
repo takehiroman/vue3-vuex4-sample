@@ -21,6 +21,14 @@ export const store = createStore({
   mutations: {
     increment(state: { count: number }) {
       state.count++
+    },
+    decrement(state: { count: number }) {
+      state.count--
+    }
+  },
+  actions: {
+    asyncIncrement(context) {
+      context.commit('increment')
     }
   }
 })

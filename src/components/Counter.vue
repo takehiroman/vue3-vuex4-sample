@@ -2,7 +2,8 @@
   <div class="hello">
     <h1>{{ count }}</h1>
     <h1>{{ double }}</h1>
-    <button @click="increment">increment</button>
+    <button @click="increment">+</button>
+    <button @click="decrement">-</button>
   </div>
 </template>
 
@@ -22,10 +23,10 @@ export default defineComponent({
       double: computed(() => store.getters.double),
 
       // mutation を呼び出す場合
-      increment: () => store.commit('increment'),
+      decrement: () => store.commit('decrement'),
 
       // action を呼び出す場合
-      asyncIncrement: () => store.dispatch('asyncIncrement')
+      increment: () => store.dispatch('asyncIncrement')
     }
   }
 })
